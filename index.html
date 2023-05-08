@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TailwindCSS Boilerplate</title>
+    <!-- <link rel="stylesheet" href="dist/output.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.min.css" />
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="">
+
+
+    <div class="mx-auto max-w-6xl py-5 border border-red-600 my-5 bg-[#F1F1F1] justify-between">
+
+        <div class="flex">
+            <div>
+                <img class="md:w-[80%] pl-5"
+                    src="https://www.iciciprulife.com/content/icici-prudential-life-insurance/tools-and-calculators/bmi_assets/images/Component21.svg"
+                    alt="">
+            </div>
+            <div class="justify-center mx-5 py-6 md:py-3">
+                <h2>BMI Calculator</h2>
+                <h4>Body Mass Index</h4>
+            </div>
+        </div>
+        <div class="md:flex max-w-6xl px-28 justify-evenly  bg-white p-12 ">
+            <div class="my-5 mx-auto mb-3">
+
+
+                <!-- Height  -->
+                <h1>height</h1>
+
+                <div class="md:flex mb-5">
+                    <input id="Fit" class="border-0 border-b p-0 my-2 focus:outline-none  focus:ring-0 mr-3 w-[30%]"
+                        name="" id="" placeholder="FT">
+
+                    <input id="inchi" class="border-0 border-b p-0 my-2 focus:outline-none  focus:ring-0 w-[30%]"
+                        name="" id="" required placeholder="Inch">
+                </div>
+
+           
+            <!-- ... -->
+            <div class="ab">
+              
+                <div>
+                    <!-- Weight -->
+                    <p>Weight</p>
+
+                    <input id="weight" class="border-0 border-b p-0 my-2 focus:outline-none  focus:ring-0 w-[30%]"
+                        type="text" name="" id="" placeholder="KG">
+                </div>
+
+
+                <div class="mx-auto items-center text-center my-3">
+                    <button id="calculate" type="submit"
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center ">
+                        Calculate
+                    </button>
+                </div>
+            </div>
+            </div>
+            <div class="bg-[#DBDBDB] my-auto mx-auto text-center p-5 w-[60%] mt-0 h-90">
+                <p>Your BMI is</p>
+                <h1 id="result" class="p-5">
+
+                </h1>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <script type="module" src="/assets/js/main.js"></script> -->
+    <script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
+
+
+
+</body>
+
+</html>
