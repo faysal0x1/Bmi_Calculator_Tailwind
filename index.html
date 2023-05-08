@@ -55,7 +55,7 @@
 
 
                     <div class="mx-auto items-center text-center my-3">
-                        <button id="calculate" onclick="calculateBmi()" type="submit"
+                        <button id="calculate" type="submit"
                             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center ">
                             Calculate
                         </button>
@@ -89,7 +89,8 @@
             // var age = document.getElementById("years").value;
             document.getElementById("result").innerHTML = BMI;
         }
-
+        var calculateButton = document.getElementById("calculate");
+        calculateButton.addEventListener("click", calculateBmi);
 
 
     </script>
