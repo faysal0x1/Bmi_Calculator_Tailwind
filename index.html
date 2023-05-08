@@ -7,91 +7,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TailwindCSS Boilerplate</title>
     <!-- <link rel="stylesheet" href="dist/output.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="">
+<body class="h-14 bg-gradient-to-r from-purple-500 to-pink-500">
 
 
-    <div class="mx-auto max-w-6xl py-5 border border-red-600 my-5 bg-[#F1F1F1] justify-between">
+    <div class="container mx-auto p-10 ">
+        <h1 class="text-3xl font-bold text-center mb-10">BMI Calculator</h1>
 
-        <div class="flex">
-            <div>
-                <img class="md:w-[80%] pl-5"
-                    src="https://www.iciciprulife.com/content/icici-prudential-life-insurance/tools-and-calculators/bmi_assets/images/Component21.svg"
-                    alt="">
+        <form class="bg-bmi bg-cover bg-center p-10">
+            <div class="flex flex-col items-center">
+                <label for="weightInput" class="mb-2 font-semibold">
+                    Weight (kg):
+                </label>
+                <input type="number" id="weightInput"
+                    class="border-2 border-blue-600 rounded-lg p-2 w-48 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
             </div>
-            <div class="justify-center mx-5 py-6 md:py-3">
-                <h2>BMI Calculator</h2>
-                <h4>Body Mass Index</h4>
+            <div class="flex flex-col items-center mt-5">
+                <label for="heightInput" class="mb-2 font-semibold">
+                    Height (cm):
+                </label>
+                <input type="number" id="heightInput"
+                    class="border-2 border-blue-600 rounded-lg p-2 w-48 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
             </div>
-        </div>
-        <div class="md:flex max-w-6xl px-28 justify-evenly  bg-white p-12 ">
-            <div class="my-5 mx-auto mb-3">
-
-
-                <!-- Height  -->
-                <h1>height</h1>
-
-                <div class="md:flex mb-5">
-                    <input id="Fit" class="border-0 border-b p-0 my-2 focus:outline-none  focus:ring-0 mr-3 w-[30%]"
-                        name="" id="" placeholder="FT">
-
-                    <input id="inchi" class="border-0 border-b p-0 my-2 focus:outline-none  focus:ring-0 w-[30%]"
-                        name="" id="" required placeholder="Inch">
-                </div>
-
-
-                <!-- ... -->
-                <div class="ab">
-
-                    <div>
-                        <!-- Weight -->
-                        <p>Weight</p>
-
-                        <input id="weight" class="border-0 border-b p-0 my-2 focus:outline-none  focus:ring-0 w-[30%]"
-                            type="text" name="" id="" placeholder="KG">
-                    </div>
-
-
-                    <div class="mx-auto items-center text-center my-3">
-                        <button id="calculate" type="submit"
-                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center ">
-                            Calculate
-                        </button>
-                    </div>
-                </div>
+            <div class="flex justify-center mt-10">
+                <button type="button" id="calculateBtn"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Calculate
+                </button>
             </div>
-            <div class="bg-[#DBDBDB] my-auto mx-auto text-center p-5 w-[60%] mt-0 h-70">
-                <p>Your BMI is</p>
-                <h1 id="result" class="p-5">
-
-                </h1>
-            </div>
-        </div>
+            <div class="mt-10 text-center text-2xl font-bold bg-gradient-to-r from-violet-500 to-fuchsia-500 hidden w-[30%] mx-auto p-5"
+                id="result"></div>
+        </form>
     </div>
 
-    <!-- <script src="assets/js/main.js"></script> -->
-    <!-- Custom Script -->
+
+
     <script>
-        function calculateBmi() {
-            var weight = document.getElementById("weight").value;
-            //   Height
-            var fit = document.getElementById("Fit").value * 12;
-            var inchi = document.getElementById("inchi").value;
-            if (!inchi) {
-                inchi = 0;
-            }
-            var height = (parseInt(fit) + parseInt(inchi)) * 0.0254;
+        const calculateBMI = () => {
+            const weightInput = document.getElementById("weightInput").value;
+            const heightInput = document.getElementById("heightInput").value / 100; // convert cm to m
+            const bmi = (weightInput / (heightInput * heightInput)).toFixed(2);
+            let result = document.getElementById("result");
+            result.classList.remove("hidden");
+            document.getElementById("result").innerHTML = `Your BMI is ${bmi}`;
+        };
 
-            var BMI = (parseInt(weight) / (Math.pow(height, 2))).toFixed(2)
-            //   var height = document.getElementById("height").value / 100; // Convert cm to m
-            // var age = document.getElementById("years").value;
-            document.getElementById("result").innerHTML = BMI;
-        }
-        var calculateButton = document.getElementById("calculate");
-        calculateButton.addEventListener("click", calculateBmi);
-
+        document.getElementById("calculateBtn").addEventListener("click", calculateBMI);
 
     </script>
 

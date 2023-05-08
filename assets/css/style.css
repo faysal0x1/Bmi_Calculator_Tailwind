@@ -1,9 +1,10 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bmi {
+  background-image: ("/git_Img/bg_Image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
