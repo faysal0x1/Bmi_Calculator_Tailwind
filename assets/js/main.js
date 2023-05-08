@@ -15,5 +15,4 @@ function calculateBmi() {
   document.getElementById("result").innerHTML = BMI;
 }
 
-var calculateButton = document.getElementById("calculate");
-calculateButton.addEventListener("click", calculateBmi);
+
